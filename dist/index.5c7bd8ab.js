@@ -522,18 +522,30 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _sumador = require("./sumador");
 var _sumadorDefault = parcelHelpers.interopDefault(_sumador);
+var _multiplicador = require("./multiplicador");
+var _multiplicadorDefault = parcelHelpers.interopDefault(_multiplicador);
 const first = document.querySelector("#primer-numero");
 const second = document.querySelector("#segundo-numero");
+const first_m = document.querySelector("#primer-numero-m");
+const second_m = document.querySelector("#segundo-numero-m");
 const form = document.querySelector("#sumar-form");
+const form_m = document.querySelector("#multiplicar-form");
 const div = document.querySelector("#resultado-div");
+const div_m = document.querySelector("#resultado-mult");
 form.addEventListener("submit", (event)=>{
     event.preventDefault();
     const firstNumber = Number.parseInt(first.value);
     const secondNumber = Number.parseInt(second.value);
     div.innerHTML = "<p>" + _sumadorDefault.default(firstNumber, secondNumber) + "</p>";
 });
+form_m.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    const firstNumber = Number.parseInt(first_m.value);
+    const secondNumber = Number.parseInt(second_m.value);
+    div_m.innerHTML = "<p>" + _multiplicadorDefault.default(firstNumber, secondNumber) + "</p>";
+});
 
-},{"./sumador":"nC6D3","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"nC6D3":[function(require,module,exports) {
+},{"./sumador":"nC6D3","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","./multiplicador":"7LiRj"}],"nC6D3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function sumar(a, b) {
@@ -571,6 +583,14 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["b1ZCO","amc1a"], "amc1a", "parcelRequirec771")
+},{}],"7LiRj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function multiplicador(a, b) {
+    return a * b;
+}
+exports.default = multiplicador;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["b1ZCO","amc1a"], "amc1a", "parcelRequirec771")
 
 //# sourceMappingURL=index.5c7bd8ab.js.map
